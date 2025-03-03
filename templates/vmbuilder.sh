@@ -102,7 +102,7 @@ setup_mbr() {
 convert() {
   echo "Converting image to QCOW2"
   echo ""
-  qemu-img convert $BLOCK -O qcow2 $QCOW2
+  qemu-img convert $BLOCK -O qcow2 -o compression_type=zstd,cluster_size=2M $QCOW2
 }
 
 cleanup
